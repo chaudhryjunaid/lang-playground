@@ -11,5 +11,13 @@
     "promises"
   ],
   "author": "Chaudhry Junaid Anwar",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaudhryjunaid/bluebird-practice.git"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "chalk": "^1.1.1"
+  }
 }
