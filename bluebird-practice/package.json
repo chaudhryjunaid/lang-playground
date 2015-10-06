@@ -1,0 +1,15 @@
+{
+  "name": "bluebird-practice",
+  "version": "1.0.0",
+  "description": "A sample project containing sample bluebird promise usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bluebird",
+    "promises"
+  ],
+  "author": "Chaudhry Junaid Anwar",
+  "license": "MIT"
+}
