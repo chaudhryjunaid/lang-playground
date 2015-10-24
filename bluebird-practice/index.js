@@ -1,15 +1,18 @@
 // package main
 
-var bluebird = require('bluebird');
+var Promise = require('bluebird');
+var _ = require('lodash');
+var glob = Promise.promisify(require('glob'));
 var chalk = require('chalk');
 
-var worker = require('./lib/worker');
-
-worker.async100(function(){
-  console.log(chalk.yellow('100'));
-  worker.async300(function(){
-    console.log(chalk.red('300'));
-  });
+glob('examples/*',{stat:true,nodir:true}).then(function(files){
+    var modules ={};
+    _.forEach(files,function(f){
+        console.log(chalk.yellow('Running module '+f ));
+        f = './'+f;
+        modules[f]=require(f);
+    });
+    return modules;
+}).catch(function(err){
+    console.log(chalk.red('Error globbing files: '+ err.message));
 });
-
-console.log(chalk.green('0'));
