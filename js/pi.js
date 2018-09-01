@@ -1,32 +1,45 @@
 const R = require('ramda');
 const minimist = require('minimist');
 
-function log(arr) {
-  if ( args.verbose ) {
-    console.log(`= 4 * (${arr[0]} + ${arr[1]} + ${arr[2]} + ${arr[3]} + ${arr[4]} + ${arr[5]} + ${arr[6]} + ... )`);
+class Series {
+  constructor(arr) {
+    this._arr = R.clone(arr);
   }
+
+  get arr() {
+    return R.clone(this._arr);
+  }
+
+  toString(displayCount = 5) {
+    return R.pipe(R.take(displayCount), R.flip(R.concat)(['...']), R.join(' + '))(this._arr);
+  }
+};
+
+
+function logSeries(prestring, displayCount, arr) {
+  let series = new Series(arr);
+  let string = series.toString(displayCount);
+  console.log(`= ${prestring}(${string})`);
 }
 
 function nth(n) {
   return Math.pow(-1, n) / (2 * n + 1);
 }
 
-function ithSum(i) {
-  return R.pipe(R.map(nth), R.tap(log), R.sum)(R.times(R.identity, i));
+function pi(i, displayCount) {
+  return R.pipe(R.map(nth),
+    R.tap(R.ifElse(() => displayCount > 0, R.partial(logSeries)(['4 * ', displayCount]), R.map(R.identity))()),
+    R.map(i => 4 * i),
+    R.tap(R.ifElse(() => displayCount > 0, R.partial(logSeries)(['', displayCount]), R.map(R.identity))()),
+    R.sum)(R.times(R.identity, i));
 }
-
-function pi(k) {
-  return 4 * ithSum(k);
-}
-
 
 const args = minimist(process.argv.slice(2), {
-  string: [ 'places' ],
-  boolean: [ 'verbose' ],
-  alias: { p: 'places', v: 'verbose' },
+  string: [ 'places', 'show' ],
+  alias: { p: 'places', s: 'show' },
   default: { places: 100000 }
 });
 
 console.log('pi');
-console.log(`= ${pi(parseInt(args.places, 10))}`); 
+console.log(`= ${pi(parseInt(args.places, 10), parseInt(args.show||0, 10))}`); 
 console.log('bye!');
