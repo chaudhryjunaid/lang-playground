@@ -1,2 +1,4 @@
 bin/
+js/node_modules
+js/package-lock.json
 
