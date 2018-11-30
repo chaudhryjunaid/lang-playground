@@ -1,0 +1,24 @@
+{
+  "name": "react-playground",
+  "version": "1.0.0",
+  "description": "react practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaudhryjunaid/react-playground.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "node"
+  ],
+  "author": "Chaudhry Junaid Anwar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chaudhryjunaid/react-playground/issues"
+  },
+  "homepage": "https://github.com/chaudhryjunaid/react-playground#readme"
+}
