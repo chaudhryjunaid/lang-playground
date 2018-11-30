@@ -1,24 +1,25 @@
 {
   "name": "react-playground",
-  "version": "1.0.0",
-  "description": "react practice",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "2.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chaudhryjunaid/react-playground.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [
-    "react",
-    "express",
-    "node"
-  ],
-  "author": "Chaudhry Junaid Anwar",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chaudhryjunaid/react-playground/issues"
-  },
-  "homepage": "https://github.com/chaudhryjunaid/react-playground#readme"
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
