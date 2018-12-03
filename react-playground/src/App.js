@@ -3,6 +3,7 @@ import {Switch, Route, Link} from 'react-router-dom';
 import RandomName from './components/RandomName';
 import Counter from './components/Counter';
 import EpochConverter from './components/EpochConverter';
+import Library from './components/library/Library';
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
         <Link to="/project/random-name">Random Name</Link><br />
         <Link to="/project/counter">Counter</Link><br />
         <Link to="/project/epoch-converter">Epoch Converter</Link><br />
+        <Link to="/project/library">Library</Link><br />
       </div>
     );
   }
@@ -22,6 +24,7 @@ class App extends Component {
           <Route exact path='/project/random-name' component={RandomName}></Route>
           <Route exact path='/project/counter' component={Counter}></Route>
           <Route exact path='/project/epoch-converter' component={EpochConverter}></Route>
+          <Route exact path='/project/library' component={Library}></Route>
         </Switch><br />
         <Link to="/">Back</Link>
       </div>

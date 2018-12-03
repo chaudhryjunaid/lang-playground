@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-let moment = require('moment');
+let moment = require('moment-timezone');
 
 class EpochConverter extends Component {
 	constructor(props) {
@@ -8,37 +8,33 @@ class EpochConverter extends Component {
 		this.setOrClearTimer = this.setOrClearTimer.bind(this);
 		this.timer = this.timer.bind(this);
 		this.state = {
-			timestamp: 0,
-			date: moment.unix(0).format(),
 			now: false,
+			timestamp: 0,
 			timer: null
 		};
 	}
 	handleTimestampChange($event) {
 		let timestamp = $event.target.value;
 		this.setState({
-			timestamp,
-			date: moment.unix(timestamp).format()
+			timestamp
 		});
 	}
 	setOrClearTimer($event) {
-		console.log('ev: ', $event.target.checked);
 		let now = $event.target.checked;
-		this.setState({now});
 		if (now) {
-			console.log('Setting state: true')
+			console.log('Setting timer...');
 			let timer = setInterval(this.timer, 1000);
-			this.setState({timer});
+			this.setState({timer, now});
 		} else {
-			console.log('Setting state: false');
+			console.log('Clearing timer...');
 			if (this.state.timer) {
 				clearInterval(this.state.timer);
 			}
-			this.setState({timer: null});
+			this.setState({timer: null, now});
 		}
 	}
 	timer() {
-		this.setState({timestamp: moment().unix(), date: moment().format()});
+		this.setState({timestamp: moment().unix()});
 	}
 	render() {
 		return (
@@ -51,7 +47,7 @@ class EpochConverter extends Component {
 					disabled={this.state.now}
 					onChange={this.handleTimestampChange}
 				/>
-				<h1>{this.state.date}</h1>
+				<h1>{moment.unix(this.state.timestamp).tz('Etc/UTC').format('YYYY-MM-DD HH:mm:ss')}</h1>
 				<input
 					type="checkbox"
 					checked={this.state.now}
