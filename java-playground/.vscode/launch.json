@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Assertions001",
+      "request": "launch",
+      "mainClass": "Assertions001"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - TryAssertions",
+      "request": "launch",
+      "mainClass": "TryAssertions"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - DecipherChar",
+      "request": "launch",
+      "mainClass": "DecipherChar"
+    }
+  ]
+}
