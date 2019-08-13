@@ -2,6 +2,24 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - MagicBall",
+      "request": "launch",
+      "mainClass": "MagicBall"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - StringBuffers",
+      "request": "launch",
+      "mainClass": "StringBuffers"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Arrays001",
+      "request": "launch",
+      "mainClass": "Arrays001"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Assertions001",
       "request": "launch",
       "mainClass": "Assertions001"
