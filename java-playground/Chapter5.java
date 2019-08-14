@@ -1,5 +1,5 @@
 class Chapter5 {
-  static int[] values =  new int[10];
+  int[] values =  new int[10];
 
   {
     System.out.println("Running initialization block...");
