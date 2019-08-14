@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Chapter5",
+      "request": "launch",
+      "mainClass": "Chapter5"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - MagicBall",
       "request": "launch",
       "mainClass": "MagicBall"
