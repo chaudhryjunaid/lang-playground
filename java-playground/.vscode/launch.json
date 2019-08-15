@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - CreateSpheres",
+      "request": "launch",
+      "mainClass": "CreateSpheres"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Chapter5",
       "request": "launch",
       "mainClass": "Chapter5"
