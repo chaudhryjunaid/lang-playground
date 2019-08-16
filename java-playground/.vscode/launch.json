@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - TryAnimal",
+      "request": "launch",
+      "mainClass": "TryAnimal",
+      "projectName": "java-playground_33c28f31"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - CreateSpheres",
       "request": "launch",
       "mainClass": "CreateSpheres"
