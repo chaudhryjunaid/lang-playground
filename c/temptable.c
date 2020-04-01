@@ -13,12 +13,12 @@ int main(int argc, char** argv) {
     start = argv[1];
   }
 
-  int startNum = atoi(start);
-  int stopNum = atoi(stop);
-  int stepNum = atoi(step);
+  float startNum = atof(start);
+  float stopNum = atof(stop);
+  float stepNum = atof(step);
 
-  for (int i = startNum; i <= stopNum; i += stepNum) {
-    printf("%d\t%d\n", i, 5*(i-32)/9);
+  for (float i = startNum; i <= stopNum; i += stepNum) {
+    printf("%8.2f\t%8.2f\n", i, 5*(i-32)/9);
   }
   return 0;
 }
