@@ -3,3 +3,6 @@ js/node_modules
 js/package-lock.json
 a.out
 
+**/__pycache__
+**/*.pyc
+
