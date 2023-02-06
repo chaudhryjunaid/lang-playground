@@ -28,6 +28,12 @@ class LinkedList:
         if x.next is not None:
             x.next.prev = x.prev
 
+    def search(self, k):
+        x = self.head
+        while x is not None and x.value != k:
+            x = x.next
+        return x;
+
     def __repr__(self):
         if self.head is None:
             return "NIL"
@@ -45,4 +51,6 @@ if __name__ == '__main__':
     L.insert(Node(5))
     L.insert(Node(7))
     print(repr(L))
+    print(L.search(5))
+    print(L.search(8))
 
