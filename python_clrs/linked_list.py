@@ -14,6 +14,8 @@ class LinkedList:
         self.head = None
 
     def insert(self, x):
+        if not isinstance(x, Node):
+            x = Node(x)
         x.next = self.head
         if self.head is not None:
             self.head.prev = x
@@ -21,6 +23,8 @@ class LinkedList:
         x.prev = None
 
     def delete(self, x):
+        if not isinstance(x, Node):
+            x = self.search(x)
         if x.prev is not None:
             x.prev.next = x.next
         else:
@@ -45,14 +49,16 @@ class LinkedList:
         rep += " -> NIL"
         return rep
 
+    def print(self):
+        print(self.__repr__())
 
 if __name__ == '__main__':
     L = LinkedList()
-    L.insert(Node(5))
-    L.insert(Node(7))
-    L.insert(Node(10))
+    L.insert(5)
+    L.insert(7)
+    L.insert(10)
     print(repr(L))
-    L.delete(L.search(7))
+    L.delete(7)
     print(repr(L))
     print(L.search(5))
     print(L.search(8))
