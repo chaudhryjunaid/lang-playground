@@ -1,0 +1,2 @@
+argon2-cffi
+SQLAlchemy==1.4.1
