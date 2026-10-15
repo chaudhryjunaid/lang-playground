@@ -1,0 +1,16 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chaudhry Junaid Anwar",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "minimist": "^1.2.0",
+    "ramda": "^0.25.0"
+  }
+}
